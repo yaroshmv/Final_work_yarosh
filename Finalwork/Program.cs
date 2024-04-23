@@ -1,12 +1,12 @@
 ﻿// Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-string[] workArray = FillArray();
-string[] resultArray = GenerateNewArray(workArray);
-string firstArray = PrintArray(workArray);
-string secondArray = PrintArray(resultArray);
+string[] workArray = FillArray(); // создание массива
+string[] resultArray = GenerateNewArray(workArray); 
+string firstArray = PrintArray(workArray); // вывод первого созданного массива
+string secondArray = PrintArray(resultArray); // вывод второго созданного массива
 Console.WriteLine(firstArray + " -> " + secondArray);
 
-string[] FillArray()
+string[] FillArray() // создание массива 
 {
     Console.WriteLine("Введите данные через пробел, по окончании ввода нажмите Enter: ");
     string? enterSymbols = Console.ReadLine();
@@ -16,7 +16,7 @@ string[] FillArray()
     return workArray;
 }
 
-string PrintArray(string[] workArray)
+string PrintArray(string[] workArray) // заполнение массива строками
 {
     string stringArray = "[";
     for (int i = 0; i < workArray.Length; i++)
@@ -32,7 +32,7 @@ string PrintArray(string[] workArray)
     return stringArray;
 }
 
-int CountStringSymbols(string[] workArray)
+int CountStringSymbols(string[] workArray) // подсчет количества элементов в массиве
 {
     int counter = 0;
     foreach (string item in workArray)
@@ -45,7 +45,7 @@ int CountStringSymbols(string[] workArray)
     return counter;
 }
 
-string[] GenerateNewArray(string[] workArray)
+string[] GenerateNewArray(string[] workArray) // создание массива по размеру количества новых элекментов
 {
     int resultArrayLength = CountStringSymbols(workArray);
     string[] resultArray = new string[resultArrayLength];
